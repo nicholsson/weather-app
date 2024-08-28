@@ -1,4 +1,4 @@
 console.log("Script is hooked!");
-import { DataGetter } from "./utils/data.js";
-const slave = new DataGetter();
-console.log(slave.query('Rome'))
+import { dataGetter } from "./utils/Data.js";
+console.log(dataGetter.queryLocation("Rome"));
+
