@@ -1,14 +1,23 @@
 // functions that talk to api are here
-const dataGetter = {
+const Query = {
   key: "6VE79QR4ZG4AXW9D36KKXSM9G",
-  requestFormat:
-    "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/",
-  queryLocation(location) {
-    const query = this.requestFormat
+  url: "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/",
+  async getData(location) {
+    const query = this.url
       .concat(location)
       .concat("/")
+      .concat("?key=")
       .concat(this.key);
-    return query;
+    try {
+      const response = await fetch(query);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.error(error.message);
+    }
   },
 };
-export { dataGetter };
+export { Query };
