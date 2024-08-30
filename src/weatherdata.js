@@ -1,13 +1,11 @@
-// functions that talk to api are here
-const Query = {
-  key: "6VE79QR4ZG4AXW9D36KKXSM9G",
-  url: "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/",
+class Query {
+  constructor() {
+    this.key = "6VE79QR4ZG4AXW9D36KKXSM9G";
+    this.url =
+      "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
+  }
   async getData(location) {
-    const query = this.url
-      .concat(location)
-      .concat("/")
-      .concat("?key=")
-      .concat(this.key);
+    const query = `${this.url}${location}/?key=${this.key}`;
     try {
       const response = await fetch(query);
       if (!response.ok) {
@@ -19,6 +17,6 @@ const Query = {
     } catch (error) {
       console.error(error.message);
     }
-  },
-};
+  }
+}
 export { Query };
