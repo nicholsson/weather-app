@@ -6,6 +6,7 @@ module.exports = {
   entry: "./src/main.js",
   plugins: [
     new HtmlWebpackPlugin({
+      template: "./index.html",
       title: "Output Management",
     }),
   ],
@@ -31,4 +32,3 @@ module.exports = {
     ],
   },
 };
-

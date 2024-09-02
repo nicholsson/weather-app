@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "UbuntuMono";
+  src: url("./assets/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "UbuntuMono";
+  src: url("./assets/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+:root {
+  --black: #32344a;
+  --blue: #7aa2f7;
+  --cyan: #449dab;
+  --green: #9ece6a;
+  --magenta: #ad8ee6;
+  --red: #f7768e;
+  --white: #787c99;
+  --yellow: #e0af68;
+  --bgcolor: rgba(26, 27, 38, 0.85);
+  --fgcolor: #a9b1d6;
+}
+* {
+  color: var(--white);
+  font-family: "UbuntuMono";
+  font-style: normal;
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background-image: url("./assets/sfondo4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.main {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bgcolor);
+}
+.top {
+  display: flex;
+}
+.info p,
+.commands p,
+pre {
+  color: var(--fgcolor);
+}
+code {
+  color: var(--green);
+}
+.info {
+  border-bottom: dashed;
+}
+.palette {
+  height: 80px;
+}
+.normal-color-palette,
+.bright-color-palette {
+  height: 50%;
+  display: flex;
+}
+.color {
+  height: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+/*
+input {
+  caret-shape: block;
+}*/
+span {
+  color: var(--yellow);
+  font-family: "UbuntuMono";
+  font-weight: bold;
+}
+input {
+  background: none;
+  border: none;
+  width: 80%;
+}
+input:focus {
+  border: none;
+  outline: none;
+}
