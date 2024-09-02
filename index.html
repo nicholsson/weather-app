@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TermWeather</title>
-  <script defer src="main.a83a7509c8839b90cf37.js"></script></head>
+    <title>owlOS | Terminal Weather</title>
+    <link rel="icon" type="image/x-icon" href="./src/assets/favicon.ico" />
+  <link rel="icon" href="favicon.ico"><script defer src="main.6533cd4caf5eb1131733.js"></script></head>
   <body>
     <div class="main">
       <div class="top">
@@ -26,22 +27,33 @@
         </div>
         <div class="right">
           <div class="info">
-            <p>owlOS - terminal weather app</p>
+            <p><span class="owl">owlOS</span> - terminal weather app</p>
           </div>
           <div class="commands">
-            <p>commands:</p>
             <p>
-              <code> !f &lt;LOCATION&gt;</code> -&gt; displays weather
-              informations of &lt;LOCATION&gt;
+              <span class="credits">credits:</span> Tran Dang Duat
+              (trandangduat.github.io/weather-app/)
             </p>
-            <p><code> !clt -&gt;</code> clears the terminal</p>
+            <p>
+              <span class="favicon">favicon:</span> freepik.com - icon by
+              Aranagraphics
+            </p>
+            <p>
+              <code> !f &lt;LOCATION&gt;:</code> displays weather informations
+              of &lt;LOCATION&gt;
+            </p>
+            <p><code> !clt:</code> clears the terminal</p>
+            <p>
+              <span class="colorscheme">colorscheme:</span> Folke Lemaitre -
+              tokyonight (github.com/folke/tokyonight.nvim)
+            </p>
           </div>
           <div class="palette"></div>
         </div>
       </div>
       <div class="terminal">
         <div class="input-line">
-          <span>user@owlOS~</span><input type="text" autofocus />
+          <span>user@owlOS~</span><input type="text" id="cmd-line" autofocus />
         </div>
       </div>
     </div>
