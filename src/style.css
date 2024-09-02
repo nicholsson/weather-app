@@ -1,7 +1,7 @@
 @font-face {
   font-family: "UbuntuMono";
   src: url("./assets/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -26,6 +26,7 @@
   color: var(--white);
   font-family: "UbuntuMono";
   font-style: normal;
+  font-size: 1.1rem;
   box-sizing: border-box;
   margin: 0;
 }
@@ -46,8 +47,13 @@ body {
 .top {
   display: flex;
 }
+.right p,
+.right p span {
+  font-size: 1rem;
+}
 pre {
   color: var(--white);
+  font-weight: bold;
 }
 .info p,
 .commands p {
@@ -78,20 +84,12 @@ code {
   flex-shrink: 1;
 }
 
-/*
-input {
-  caret-shape: block;
-}*/
-span {
-  color: var(--yellow);
-  font-family: "UbuntuMono";
-  font-weight: bold;
-}
 input {
   color: var(--fgcolor);
   background: none;
   border: none;
   width: 80%;
+  font-size: 1.1rem;
 }
 input:focus {
   border: none;
@@ -99,17 +97,22 @@ input:focus {
 }
 .credits {
   color: var(--blue);
-  font-style: bold;
+  font-weight: bold;
 }
 .favicon {
   color: var(--red);
-  font-style: bold;
+  font-weight: bold;
 }
 .owl {
   color: var(--yellow);
-  font-style: bold;
+  font-weight: bold;
 }
 .colorscheme {
   color: var(--magenta);
-  font-style: bold;
+  font-weight: bold;
+}
+#command-line::before {
+  content: "user@owlOS~";
+  color: var(--yellow);
+  font-weight: bold;
 }
