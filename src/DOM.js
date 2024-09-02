@@ -1,21 +1,21 @@
 const paletteBright = {
-  black: "#444b6a",
-  blue: "#7da6ff",
-  cyan: "#0db9d7",
-  green: "#b9f27c",
+  black: "#414868",
+  blue: "#7aa2f7",
+  cyan: "#7dcfff",
+  green: "#9ece6a",
   magenta: "#bb9af7",
-  red: "#ff7a93",
-  white: "#acb0d0",
-  yellow: "#ff9e64",
+  red: "#f7768e",
+  white: "#c0caf5",
+  yellow: "#e0af68",
 };
 const paletteNormal = {
-  black: "#32344a",
+  black: "#414868",
   blue: "#7aa2f7",
-  cyan: "#449dab",
+  cyan: "#7dcfff",
   green: "#9ece6a",
-  magenta: "#ad8ee6",
+  magenta: "#bb9af7",
   red: "#f7768e",
-  white: "#787c99",
+  white: "#c0caf5",
   yellow: "#e0af68",
 };
 export function appendPalette() {

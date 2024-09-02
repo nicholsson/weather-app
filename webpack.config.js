@@ -6,6 +6,7 @@ module.exports = {
   entry: "./src/main.js",
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: "./src/assets/favicon.ico",
       template: "./index.html",
       title: "Output Management",
     }),
