@@ -46,7 +46,16 @@ body {
 }
 .top {
   display: flex;
+  justify-content: space-between;
 }
+.main {
+  padding: 10px 40px 10px 0px;
+}
+.terminal {
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
 .right p,
 .right p span {
   font-size: 1rem;

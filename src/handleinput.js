@@ -6,21 +6,38 @@ export class InputHandler {
     this.input = input;
   }
   async handle() {
-    if (this.input[0] != "!") {
-      errorMessage();
+    const form = document.querySelector("form");
+    const inputList = this.input.split(" ");
+    console.log(inputList);
+    if (inputList[0] !== "!f" && inputList[0] !== "!clt") {
+      errorMessage(this.input);
+      form.reset();
       return;
     } else {
-      if (this.input[1] == "f") {
-        const location = this.input.slice(2, this.input.length);
-        const query = new Query();
-        const data = await query.getData(location);
-        process(data, this.input);
-      } else if (this.input == "!clt") {
+      if (inputList[0] === "!f") {
+        if (inputList[1]) {
+          const location = this.input.slice(3).trim();
+          const query = new Query();
+          const data = await query.getData(location);
+          process(data, this.input);
+        } else {
+          errorMessage(this.input);
+        }
+      } else if (inputList[0] === "!clt") {
         resetTerminal();
-        return;
       }
+      form.reset();
     }
   }
+}
+function errorMessage(command) {
+  const errorMsg = `<strong style="color:red">[Error]: <i style="color:pink">${command}</i> </strong>invalid command`;
+  const terminal = document.querySelector(".terminal");
+  const inputLine = document.querySelector(".input-line");
+  const msg = document.createElement("div");
+  msg.className = "command-line";
+  msg.innerHTML = errorMsg;
+  terminal.insertBefore(msg, inputLine);
 }
 function process(data, command) {
   const name = data.resolvedAddress;
@@ -51,5 +68,25 @@ function processForecast(forecast) {
     const temp = hour.temp;
     console.log(time);
     console.log(temp);
+  });
+}
+function resetTerminal() {
+  const terminal = document.querySelector(".terminal");
+  terminal.innerHTML = `<div class="input-line">
+          <form>
+            <div class="command-line">
+              <input type="text" id="cmd-line" autofocus />
+            </div>
+          </form>
+        </div>`;
+  addEventToForm();
+}
+export function addEventToForm() {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const command = document.querySelector("input").value;
+    const inputHandler = new InputHandler(command);
+    inputHandler.handle();
   });
 }
