@@ -23,7 +23,7 @@
   --fgcolor: #9e9e9e;
 }
 * {
-  color: var(--white);
+  color: var(--fgcolor);
   font-family: "UbuntuMono";
   font-style: normal;
   font-size: 1.1rem;
@@ -110,8 +110,8 @@ input:focus {
   color: var(--magenta);
   font-weight: bold;
 }
-#command-line::before {
-  content: "user@owlOS~";
+.command-line::before {
+  content: "user@owlOS~ ";
   color: var(--yellow);
   font-weight: bold;
 }
