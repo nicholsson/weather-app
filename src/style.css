@@ -73,9 +73,8 @@ code {
 .palette {
   height: 80px;
 }
-.normal-color-palette,
-.bright-color-palette {
-  height: 50%;
+.normal-color-palette {
+  height: 100%;
   display: flex;
 }
 .color {

@@ -7,12 +7,10 @@ console.log("Script is hooked!");
 
 appendPalette();
 
-const input = document.querySelector("#cmd-line");
-input.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    const command = input.value;
-    const inputHandler = new InputHandler(command);
-    inputHandler.handle();
-  }
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const command = document.querySelector("input").value;
+  const inputHandler = new InputHandler(command);
+  inputHandler.handle();
 });
